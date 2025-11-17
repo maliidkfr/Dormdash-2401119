@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DormDash | Your Cart</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+  <a href="../index.html" class="logo-area">
+    <img src="../Assets/logo.png" alt="DormDash Logo" class="logo-img">
+    <h1>DormDash</h1>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="products.html">Services</a></li>
+    <li><a href="cart.html">Cart</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+</nav>
+
+  </header>
+
+  <main>
+    <section class="cart-container">
+      <h2>Your DormDash Cart</h2>
+      <div id="cartItems"></div>
+
+      <div class="cart-summary">
+        <h3>Total: $<span id="cartTotal">0.00</span></h3>
+        <button class="btn" onclick="clearCart()">Clear Cart</button>
+        <button class="btn" onclick="checkout()">Checkout</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DormDash | Built by Damali Reid</p>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    // Display the cart when page loads
+    document.addEventListener("DOMContentLoaded", displayCart);
+
+    function displayCart() {
+      const cart = JSON.parse(localStorage.getItem("DormDashCart")) || [];
+      const cartItemsDiv = document.getElementById("cartItems");
+      const totalDiv = document.getElementById("cartTotal");
+
+      if (cart.length === 0) {
+        cartItemsDiv.innerHTML = "<p>Your cart is empty 😢</p>";
+        totalDiv.textContent = "0.00";
+        return;
+      }
+
+      let html = `
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      let total = 0;
+      cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        html += `
+          <tr>
+            <td>${item.name}</td>
+            <td>$${item.price.toFixed(2)}</td>
+            <td>${item.quantity}</td>
+            <td>$${subtotal.toFixed(2)}</td>
+          </tr>
+        `;
+      });
+
+      html += `</tbody></table>`;
+      cartItemsDiv.innerHTML = html;
+      totalDiv.textContent = total.toFixed(2);
+    }
+
+    function clearCart() {
+      localStorage.removeItem("DormDashCart");
+      displayCart();
+      alert("Cart cleared 🧹");
+    }
+
+    function checkout() {
+      const cart = JSON.parse(localStorage.getItem("DormDashCart")) || [];
+      if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+      }
+
+      alert("✅ Checkout successful! Your errands are on the way.");
+      localStorage.removeItem("DormDashCart");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DormDash | Services</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+  <a href="../index.html" class="logo-area">
+    <img src="../Assets/logo.png" alt="DormDash Logo" class="logo-img">
+    <h1>DormDash</h1>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="products.html">Services</a></li>
+    <li><a href="cart.html">Cart</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+</nav>
+  </header>
+
+  <main>
+    <section class="products-container">
+      <h2>Campus Errand Services</h2>
+      <p>From quick food pickups to dorm deliveries, DormDash has it all!</p>
+
+      <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <img src="../Assets/food.png" alt="Food Delivery">
+          <h3>Food Pickup & Delivery</h3>
+          <p class="price">$350</p>
+          <p>Grab meals from the cafeteria or nearby shops and have them delivered to your dorm door.</p>
+          <button onclick="addToCart('Food Pickup & Delivery', 3.50)">Add to Cart</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <img src="../Assets/laundry.png" alt="Laundry Help">
+          <h3>Laundry Drop & Pick-Up</h3>
+          <p class="price">$500</p>
+          <p>Too busy to wash? Let another student drop off or pick up your laundry from the washroom.</p>
+          <button onclick="addToCart('Laundry Drop & Pick-Up', 5.00)">Add to Cart</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <img src="../Assets/supplies.png" alt="Stationery Run">
+          <h3>Stationery Run</h3>
+          <p class="price">$250</p>
+          <p>Out of pens, paper, or notebooks? We’ll dash to the bookstore for you in no time!</p>
+          <button onclick="addToCart('Stationery Run', 2.50)">Add to Cart</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+          <img src="../Assets/tech.png" alt="Tech Assistance">
+          <h3>Tech Assistance</h3>
+          <p class="price">$400</p>
+          <p>Need help fixing a laptop issue or setting up Wi-Fi? Book a campus tech helper instantly.</p>
+          <button onclick="addToCart('Tech Assistance', 4.00)">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DormDash | Built by Damali Reid</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DormDash | Login</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+  <a href="../index.html" class="logo-area">
+    <img src="../Assets/logo.png" alt="DormDash Logo" class="logo-img">
+    <h1>DormDash</h1>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="products.html">Services</a></li>
+    <li><a href="cart.html">Cart</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+</nav>
+  </header>
+
+  <main>
+    <div class="form-container">
+      <h2>Welcome Back to DormDash</h2>
+      <p>Login to your account and continue making campus life easier!</p>
+
+      <form id="loginForm">
+        <label for="loginUsername">Username</label>
+        <input type="text" id="loginUsername" placeholder="Enter your username">
+
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter your password">
+
+        <p id="loginError" class="error-msg"></p>
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+
+      <p style="margin-top: 15px;">Don’t have an account yet?
+        <a href="register.html" style="color: var(--primary); font-weight: 600;">Register here</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DormDash | Built by Damali Reid</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
